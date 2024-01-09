@@ -189,7 +189,7 @@ def transform_poses_to_original_space(
         ),
         1,
     )
-    output_poses[..., :3, 3] /= applied_scale
+    output_poses[..., :3, 1:3] /= applied_scale
     inv_transform = torch.linalg.inv(
         torch.cat(
             (
